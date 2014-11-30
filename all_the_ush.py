@@ -15,7 +15,7 @@ from ipwhois import IPWhois
 import csv
 import urlparse
 from time import gmtime, strftime
-import read_write_csv
+from read_write_csv import csv_to_array
 import countrylocations
 
 #Constants
@@ -254,7 +254,7 @@ where status is one of live, crowdmap or dead
 """
 def get_urls_from_status_file(csvfilename):
 	urls = []
-	headers, allurls = read_write_csv.csv_to_dict(csvfilename);
+	headers, allurls = csv_to_array(csvfilename);
 	for url in allurls:
 		if url[1] != "dead":
 			urls += [url[0]];

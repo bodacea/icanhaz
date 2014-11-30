@@ -9,6 +9,8 @@ import csv
 from urllib2 import urlopen
 import requests
 import json
+from read_write_csv import csv_to_dict
+
 
 #Constants
 countryerrors = {
@@ -55,25 +57,6 @@ def get_country_from_latlong(lat, lon, provider='Googlemaps'):
 	return(countryname)
 
 
-def read_dict_csv(csvfilename):
-	outdict = {}
-	fin = open(csvfilename, "rb");
-	csvin = csv.reader(fin);
-	headers = csvin.next(); #Read in header row
-	for row in csvin:
-		outdict.setdefault(row[0], row[1:]); #NB if 1: is null, sets value to null
-	fin.close();
-	return(outdict)
-
-
-def read_countrylatlons():
-	latlons = read_dict_csv('countrylatlons.csv');
-	return(latlons)
-
-def read_countryboundingboxes():
-	boundboxes = read_dict_csv('country-boundingboxes.csv');
-	return(boundboxes)
-
 def check_boundingboxes(boundings):
 	#Use google maps api to check bounding box file
 	for name in boundings:
@@ -101,8 +84,8 @@ def correct_latlon(latlons, boundings):
 """ Main function
 """
 def main(argv):
-	latlons = read_countrylatlons();
-	boundings = read_countryboundingboxes();
+	latlons = csv_to_dict('countrylatlons.csv');
+	boundings = csv_to_dict('country-boundingboxes.csv');
 
 
 """ Start here, if run from the commandline

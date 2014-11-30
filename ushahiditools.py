@@ -54,19 +54,19 @@ def push_photo_to_ush(mapurl, title, description, lat, lon, location, categories
 	'location_name': location, \
 	'incident_photo[]': "@"+photoname+";filename="+photoname+";type=image/jpeg" \
 	};
-	imagefiles = {'file': open(photoname, 'rb')};
+	imagefiles = {photoname: open(photoname, 'rb')};
 	r = requests.post(mapurl+"api", data=payload, files=imagefiles);
 	return(r)
 
-
 #fake up some data
-mapurl = "http://www.yourushahidisite.com/";
+mapurl = "https://worldushahidis.crowdmap.com/";
 title = "this is my title";
 description = "this is my description";
 lat = 0;
 lon = 0;
 location = "Nairobi";
 categories = "unknown,tiny";
+photopath = "/";
 photoname = "test.jpg"; #NB jpgs only at mo - will need other type above (e.g. image/otherformat) if not
 r = push_photo_to_ush(mapurl, title, description, lat, lon, location, categories, photopath, photoname);
 print(r.text);

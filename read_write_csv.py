@@ -6,11 +6,10 @@ Sara-Jayne Terp
 """
 import csv
 
-"""Read csv file into a dictionary
+"""Read csv file into an array
 
-This can also be done with csv.DictReader()
 """
-def csv_to_dict(csvfilename, hasheaders=True, printout=False):
+def csv_to_array(csvfilename, hasheaders=True, printout=False):
 	fin = open(csvfilename, "rb");
 	csvin = csv.reader(fin);
 	#Read in header row
@@ -30,6 +29,24 @@ def csv_to_dict(csvfilename, hasheaders=True, printout=False):
 	#tidy up
 	fin.close()
 	return(headers, datadict)
+
+
+""" Read csv file into a data dictionary
+
+This can also be done with csv.DictReader()
+"""
+def csv_to_dict(csvfilename, hasheaders=True):
+	headers = []
+	outdict = {}
+	fin = open(csvfilename, "rb");
+	csvin = csv.reader(fin);
+	#Read in header row
+	if hasheaders:
+		headers = csvin.next();
+	for row in csvin:
+		outdict.setdefault(row[0], row[1:]); #NB if 1: is null, sets value to null
+	fin.close();
+	return(headers, outdict)
 
 
 """ Write data dictionary to csv file

@@ -6,17 +6,11 @@ Sara-Jayne Terp
 2014
 """
 
-import read_write_csv #SJF functions for csv handling
+from read_write_csv import csv_to_array, dict_to_csv #SJF functions for csv handling
 import all_the_ush #SJF functions for ushahidi url checking
 import sys
 import csv
 import json
-
-""" Get inlist from file
-"""
-def get_urllist_from_csv(csvfilename):
-	headers, inlist = read_write_csv.csv_to_dict(csvfilename);
-	return(inlist)
 
 
 """Make live/dead ushahidi list from the cleaned and dead lists
@@ -26,7 +20,7 @@ def create_deadalive_list():
 	fin = open("../../data/ush_deadurls.txt", "r");
 	deadurls = json.load(fin);
 	#Recreate fulllist from inputs
-	urllist = get_urllist_from_csv("../../data/2014-11-18_Ushahidi_Site_Lists.csv");
+	headers, urllist = csv_to_array("../../data/2014-11-18_Ushahidi_Site_Lists.csv");
 	crowdmaps, standalones = clean_ush_list(urllist);
 	#create array of dead, live, crowdmap from lists
 	liveurls = list(set(standalones).difference(set(deadurls)));
@@ -82,12 +76,12 @@ def clean_ush_list(inlist):
 def main():
 	directoryurl = "http://tracker.ushahidi.com/"
 
-	urllist = get_urllist_from_csv("../../data/brian_ush_lists.csv");
+	headers, urllist = csv_to_array("../../data/brian_ush_lists.csv");
 	print("Original list length is "+str(len(urllist)));
 	crowdmaps, standalones = clean_ush_list(urllist);
 	print(str(len(crowdmaps))+ " crowdmaps, "+str(len(standalones))+" standalone instances");
 	hostcounts, deadlist = all_the_ush.count_hosts(standalones);
-	read_write_csv.dict_to_csv("ush_hostcounts.csv", ["Host","Count"], hostcounts);
+	dict_to_csv("ush_hostcounts.csv", ["Host","Count"], hostcounts);
 	json.dump(deadlist, open("ush_deadurls.txt",'w')); #Write deadlist to file
 
 

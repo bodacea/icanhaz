@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+""" Create a list of all the files in a given directory. 
+
+Example use: python all_files_in_a_directory.py testdata csv
+
+Sara-Jayne Terp
+2014
+"""
 import glob
 import os
 import sys
@@ -9,7 +17,8 @@ def getfiles(datadir, filetype):
 def main(argv):
 	if len(argv) > 1:
 		datadir = argv[0]
-		filetype = '*'+argv[1]
+		filetype = '*.'+argv[1]
+		print("looking for %s in directory %s" % (filetype, datadir))
 	else:
 		datadir = '.'
 		filetype = '*'
