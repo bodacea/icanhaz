@@ -17,6 +17,7 @@ import urlparse
 from time import gmtime, strftime
 from read_write_csv import csv_to_array
 import countrylocations
+import ushahiditools
 
 #Constants
 countrylatlons = {};
@@ -51,7 +52,7 @@ def get_site_details(siteurl):
 	#Can get geographic midpoint using api?task=geographicmidpoint
 	try:
 		fullsiteurl = siteurl+'/';
-		sitedesc['numreports'] = get_number_of_ush_reports(fullsiteurl);
+		sitedesc['numreports'] = ushahiditools.get_number_of_ush_reports(fullsiteurl);
 		sitedesc['api'] = 'yes';
 		if sitedesc['numreports'] >= sizethreshold:
 			#Give map a size name
@@ -238,15 +239,6 @@ def check_tracker_entries(mapentries, mapurl, directoryurl):
 	return newurls
 
 
-""" Get number of reports on an ushahidi site
-"""
-def get_number_of_ush_reports(siteurl):
-	response = requests.get(url=siteurl+"api?task=incidentcount")
-	numjson = json.loads(response.text)
-	numreports = int(numjson['payload']['count'][0]['count'])	
-	return numreports
-
-
 """ Get list of live urls
 
 Assumes that status file is a CSV with columns Site URL and status
@@ -266,9 +258,9 @@ def get_urls_from_status_file(csvfilename):
 def get_urls_from_map(mapurl):
 	#Put list of sites into a dictionary
 	mapentries = {}
-	numsites = get_number_of_ush_reports(mapurl)
+	numsites = ushahiditools.get_number_of_ush_reports(mapurl)
 	numcalls = numsites/100
-	if numcalls%100 != 0:
+	if numcalls < 100 or numcalls%100 != 0:
 		numcalls += 1
 	for call in range(0, numcalls):
 		startid = str(call*100)

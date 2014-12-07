@@ -66,3 +66,20 @@ def dict_to_csv(csvfilename, headers, datadict, hasheaders=True):
 	fout.close()
 	return()
 
+""" Write data array to csv file
+
+"""
+def array_to_csv(csvfilename, dataset, headers=None):
+	fout = open(csvfilename, "wb")
+	csvout = csv.writer(fout, quoting=csv.QUOTE_NONNUMERIC)  
+	#Write headers to csv file
+	if headers:
+		csvout.writerow(headers)
+	#Write data to csv file
+	for entry in dataset:
+		print(entry)
+		csvout.writerow(entry)
+	#tidy up
+	fout.close()
+	return()
+

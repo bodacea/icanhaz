@@ -1,6 +1,6 @@
 
 #!/usr/bin/env python
-""" Push entry with photo attached to an Ushahidi V2.7 repo
+""" Read/write to Ushahidi v2.7 instances
 
 Sara-Jayne Terp
 2014
@@ -11,6 +11,37 @@ from time import gmtime, strftime
 import json
 
 mapcategories = {}
+
+
+""" Get reports from ushahidi website
+"""
+def get_ush_reports(mapurl):
+	#Put list of sites into a dictionary
+	reports = []
+	numreports = get_number_of_ush_reports(mapurl)
+	numcalls = numreports/100
+	if numcalls < 100 or numcalls%100 != 0:
+		numcalls += 1
+	for call in range(0, numcalls):
+		startid = str(call*100)
+		if call == 0:
+			response = requests.get(url=mapurl+"api?task=incidents&limit=100")  #Ush api crashes if sinceid=0
+		else:
+			response = requests.get(url=mapurl+"api?task=incidents&by=sinceid&id="+startid+"&limit=100")
+		reportsjson = json.loads(response.text)
+		for sitedetails in reportsjson['payload']['incidents']:
+			reports += [sitedetails];
+	return reports
+
+
+
+""" Get number of reports on an ushahidi site
+"""
+def get_number_of_ush_reports(siteurl):
+	response = requests.get(url=siteurl+"api?task=incidentcount")
+	numjson = json.loads(response.text)
+	numreports = int(numjson['payload']['count'][0]['count'])	
+	return numreports
 
 
 """ Use ushahidi site's categories list to convert text categories list into ids
@@ -30,7 +61,7 @@ def cats_to_catids(catslist, mapurl):
 	return(catidslist)
 
 
-""" Send data to ushahidi instance
+""" Push entry with photo attached to an Ushahidi V2.7 repo 
 #date, hour, minute, ampm are all mandatory fields 
 #Url, Technology, Country are all custom formfields in my site; use similar
 """
@@ -58,16 +89,19 @@ def push_photo_to_ush(mapurl, title, description, lat, lon, location, categories
 	r = requests.post(mapurl+"api", data=payload, files=imagefiles);
 	return(r)
 
-#fake up some data
-mapurl = "https://worldushahidis.crowdmap.com/";
-title = "this is my title";
-description = "this is my description";
-lat = 0;
-lon = 0;
-location = "Nairobi";
-categories = "unknown,tiny";
-photopath = "/";
-photoname = "test.jpg"; #NB jpgs only at mo - will need other type above (e.g. image/otherformat) if not
-r = push_photo_to_ush(mapurl, title, description, lat, lon, location, categories, photopath, photoname);
-print(r.text);
+
+def try_photo():
+	#fake up some data
+	mapurl = "https://worldushahidis.crowdmap.com/";
+	title = "this is my title";
+	description = "this is my description";
+	lat = 0;
+	lon = 0;
+	location = "Nairobi";
+	categories = "unknown,tiny";
+	photopath = "/";
+	photoname = "test.jpg"; #NB jpgs only at mo - will need other type above (e.g. image/otherformat) if not
+	r = push_photo_to_ush(mapurl, title, description, lat, lon, location, categories, photopath, photoname);
+	print(r.text);
+
 
