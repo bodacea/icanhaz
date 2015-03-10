@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>PAR_BOUNDARY2</name>
+  <Placemark>
+	<name></name>
+	<description></description>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>135,25 135,5 115,5 115,15 120,21 120,25 135,25</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

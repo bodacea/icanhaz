@@ -30,7 +30,7 @@ countryerrors = {
 Use Googlemaps api to find the country that a latlong is in
 This gets screwed up by the google api limits- likely to see message 
 'You have exceeded your daily request quota for this API.'
-FIXIT: use country boundaries and shapely to get past this problem
+FIXIT: NEed to use country boundaries and shapely to get past this problem
 """
 def get_country_from_latlong(lat, lon, provider='Googlemaps'):
 	countryname = "unknown";
@@ -81,11 +81,16 @@ def correct_latlon(latlons, boundings):
 	return()
 
 
+def read_countrylatlons():
+	headers, latlons = csv_to_dict('datasets/countrylatlons.csv');
+	return(latlons)
+
+
 """ Main function
 """
 def main(argv):
-	latlons = csv_to_dict('countrylatlons.csv');
-	boundings = csv_to_dict('country-boundingboxes.csv');
+	headers, latlons = csv_to_dict('datasets/countrylatlons.csv');
+	headers, boundings = csv_to_dict('datasets/country-boundingboxes.csv');
 
 
 """ Start here, if run from the commandline

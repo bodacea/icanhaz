@@ -5,7 +5,7 @@ Sara-Jayne Terp
 2014
 """
 
-import ushahiditools
+import ushapy
 import read_write_csv
 
 sources = ['https://supertyphoonpablo.crowdmap.com/', \
@@ -24,7 +24,7 @@ sources = ['https://supertyphoonpablo.crowdmap.com/', \
 
 locs = [];
 for mapurl in sources:
-	reports = ushahiditools.get_ush_reports(mapurl);
+	reports = ushapy.get_ush_reports(mapurl);
 	for r in reports:
 		lat = r['incident']['locationlatitude'];
 		lat = "" if lat==None else lat.encode('utf-8');

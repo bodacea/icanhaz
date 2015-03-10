@@ -1,0 +1,1854 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>COUNCIL FOR THE DEVELOPMENT OF CAMBODIA (CDC)</title>
+<link rel="stylesheet" type="text/css" href="../functions/css.css">
+<script type="text/javascript" src="../ajax/ajax.js"></script>
+<script type="text/javascript" src="../menu/menu.js"></script>
+<script type="text/javascript" language="javascript">
+function Page(i, OtherSubSector, Status){
+	var val ="?initPage="+ i +"&OtherSubSector=" + OtherSubSector + "&status="+ Status ; 
+	Ajax_UpdatePanel("report_listing_by_sector.asp", val,"report_listing_by_sector",true);
+}
+
+function selectStatus()
+{
+	ById("cmbStatus").value = '0'
+}
+
+function search(){
+
+	var submitValue = ""
+   	if (ById("OtherSubSector").value != 0) {
+		submitValue ='?OtherSubSector='+ ById("OtherSubSector").value;
+   	}
+
+	if (ById('cmbStatus').value != 0) {
+		submitValue +='&status='+ ById('cmbStatus').value;
+	}
+
+   	Ajax_UpdatePanel('report_listing_by_sector.asp', submitValue,'report_listing_by_sector',true);
+
+}
+</script>
+</head>
+
+<body onload="selectStatus()">
+<form name="myform" action="../Reports/report.asp" method="post">
+<table border="0" width="100%" id="table1" cellspacing="1" style="border-collapse: collapse">
+		<tr>
+		<td colspan="2" height="20">
+<table border="0" width="100%" id="table1" cellspacing="1" style="border-bottom-width: 0px">
+	<tr>
+		<td rowspan="2" align="center" width="15%"> <img border="0" src="http://cdc.khmer.biz/images/logo1.jpg" width="96" height="113"></td>
+		<td rowspan="2" align="center" width="69%">
+      
+     <img border="0" src="http://cdc.khmer.biz/images/banner.png" width="539" height="107"></td>
+		<td align="left" width="15%"><img border="0" src="http://cdc.khmer.biz/images/flag.gif" width="100" height="72"></td>
+	</tr>
+	<tr>
+		<td align="left" width="15%"> <img border="0" src="http://cdc.khmer.biz/images/kingdom_cam.jpg" width="103" height="33"></td>
+	</tr>
+	<tr>
+		<td align="right" colspan="3" class="fontNormal" style="border-bottom-style: none; border-bottom-width: medium" height="21" valign="top"><font color="#0000FF">
+		<b>Welcome 
+        to <font color="#008080"> Guest</font>/<font color="#008080"> 
+        </font> <a href="http://cdc.khmer.biz/index.asp?signout=true"><font color="#FF0000">Exit</font></a><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></b></font></td>
+	</tr>
+
+</table>
+
+</td>
+	</tr>
+	<tr>
+	<td colspan="2" height="20">
+<script type="text/javascript" src="http://cdc.khmer.biz/functions/function.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdc.khmer.biz/menu/menu.css">
+
+
+<div align="center">
+<table border="0" width="100%" id="table3" cellpadding="0" style="border-collapse: collapse">
+<tr>
+		<td style="border-bottom: 5px solid #FF9900" align="center">
+		<table class="fontBig"  border="0" width="99%" cellpadding="0" height="25" id="table4" cellspacing="0">
+			<tr>
+			                 
+                <td width="12%" height="22" align="center" nowrap id="ODANormalMenu">
+			
+				<a href="http://cdc.khmer.biz/projectlist/project_list_readonly.asp">List of Projects</a>
+			
+		</td>
+                
+				
+			  <td width="12%" height="22" align="center" nowrap  id="ODANormalMenu" >
+			  <a href="http://cdc.khmer.biz/OwnReport/Query.asp">Query</a> </td>
+             
+			  <td width="12%" height="22" align="center" nowrap id="ODASelectedMenu" >
+			  <a href="http://cdc.khmer.biz/Reports/reports_by_Donor.asp">Reports</a>				</td>
+				<td width="12%" height="22" align="center" nowrap id="ODANormalMenu" >
+			  <a href="http://cdc.khmer.biz/documents/annex.asp">Annex</a></td>
+				<td width="12%" height="22" align="center" nowrap  id="ODANormalMenu" >
+			  <a href="http://cdc.khmer.biz/documents/user_guide.asp">User's Guide</a>				</td>
+			
+				<td width="12%" height="22" align="center" nowrap  id="ODANormalMenu" onclick="popup('http://cdc.khmer.biz/about.html','350','200')">
+				<a href="#none">About</a>				</td>
+			
+			
+			</tr>
+	  </table></td>
+	</tr>
+</table>
+
+
+
+</div>
+</td>
+	</tr>
+
+	<tr>
+		<td height="20" width="13%" valign="top">
+<script type="text/javascript" src="../functions/function.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdc.khmer.biz/menu/menu.css">
+<table border="0" width="206" id="table6" cellpadding="2" style="border-collapse: collapse" >
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="200" style="border-collapse: collapse" cellpadding="0" id="table7">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" height="25" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left">
+				<font color="#FFFFFF"><b>SUMMARY</b></font></td>
+			</tr>
+			<tr class="fontNormal" id="spanLeft01">
+			
+				<td width="93%" align="left"  height="20px" style="border: 1px solid #008000; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<table width="100%" id="table8" style="border-collapse: collapse" class="fontNormal" cellpadding="2">
+				<tr id="1" bgcolor="">
+					<td align="right" height="20px"><img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9"></td>
+					<td width="158" align="left" height="20px" id="ODALeftPanel">
+					<a href="http://cdc.khmer.biz/Reports/reports_by_Donor.asp">
+					Donor</a></td>
+				</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_sector.asp">
+		Sector</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_location.asp">
+		Province</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_duration.asp">
+		Duration</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TypeOA.asp">
+		Type of Assistance</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TermOA.asp">
+		Term of Assistance</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/Reports/reports_by_status.asp">
+		Project Status</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/Reports/reports_by_implementing_agency.asp">Implementing 
+		Agency</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_MainProgram.asp">
+		Thematic Marker</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TWG.asp">
+		Technical 
+		Working Group (TWG)</a></td>
+    			</tr>
+    <tr bgcolor="">
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_pba.asp">Program-Based Approach</a></td>
+    			</tr>
+	
+				<tr bgcolor="">
+					<td align="right"  height="20px">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+					<td width="158" align="left"  height="20px" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_updated.asp?status=0">
+		Last Update</a></td>
+				</tr>
+				</table>
+			</td>
+		  </tr>
+		</table>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="199" style="border-collapse: collapse" cellpadding="0" id="table9">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" height="25" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left" >
+				<font color="#FFFFFF">
+				<b>LISTING</b></font></td>
+			</tr>
+			<tr class="fontNormal" id="spanLeft05">
+			
+				<td width="93%" align="left"  height="20px" style="border: 1px solid #008000">
+			<table width="100%" id="table10" style="border-collapse: collapse" class="fontNormal" cellpadding="2">
+				<tr id="1" bgcolor="">
+					<td align="right" height="20px"><img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+					<td width="158" align="left" height="20px" id="ODALeftPanel">
+					
+						<a href="http://cdc.khmer.biz/projectlist/project_list_readonly.asp">Donor</a>
+					
+
+					</td>
+				</tr>
+				<tr bgcolor="#CCFFCC">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_sector_list.asp?OtherSubSector=-1">
+		Sector</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_location_list.asp">Province</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+      <a href="http://cdc.khmer.biz/Reports/reports_by_duration_list.asp">Duration</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TypeOA_list.asp">Type of Assistance</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TermOA_list.asp">Term of Assistance</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/Reports/reports_by_status_list.asp">Project Status</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/Reports/reports_by_implementing_agency_list.asp">Implementing Agency</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px"  width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px"  align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/Reports/reports_by_MainProgram_list.asp">Thematic Marker</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_TWG_list.asp">Technical 
+		Working Group (TWG)</a></td>
+    			</tr>
+    							<tr bgcolor="">
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="20px" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style:none; border-top-width:medium" align="left" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/reports/reports_by_pba_list.asp">Program-Based Approach</a></td>
+    			</tr>
+				<tr bgcolor="">
+					<td align="right"  height="20px">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+					<td width="158" align="left"  height="20px" id="ODALeftPanel">
+		<a href="http://cdc.khmer.biz/ProjectList/project_list_updated.asp">Last Update</a></td>
+				</tr>
+				</table>
+			</td>
+		  </tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="199" style="border-collapse: collapse" cellpadding="0" id="table11">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left" height="25">
+				<font color="#FFFFFF">
+				<b>PREDEFINED REPORTS</b></font></td>
+			</tr>
+			<tr class="fontNormal"  id="spanLeft02">
+			
+				<td width="93%" align="left" style="border: 1px solid #008000" >
+			<table border="0" width="100%" id="table12" style="border-collapse: collapse" cellpadding="2" >
+				<tr bgcolor="">
+      <td class="fontNormal" height="18" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium; " valign="middle" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="18" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium; " width="158" align="left" id="ODALeftPanel">
+      <a href="#None" onClick="window.open('http://cdc.khmer.biz/reports/select_donor_status.asp','','width=350,height=150,left='+ ((window.screen.width/2)-275) +',top='+ ((window.screen.height/2)-190))"> 
+		Project Summary Reports</a></td>
+    			</tr>
+				<tr bgcolor="">
+      <td class="fontNormal" height="18"  valign="middle" width="24" align="right">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal" height="18"  width="158" align="left" id="ODALeftPanel">
+      <a href="#None" onClick="window.open('http://cdc.khmer.biz/reports/select_donor_statusandcurrency.asp','','width=500,height=370,left='+ ((window.screen.width/2)-250) +',top='+ ((window.screen.height/2)-190))">
+      Summary of Disbursements by Project for the year</a></td>
+    			</tr>
+
+    			
+				</table>
+				</td>
+		  </tr>
+
+		</table>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="199" style="border-collapse: collapse" cellpadding="0" id="table17">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" height="25" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left">
+				<font color="#FFFFFF">
+				<b>OTHER REPORTS</b></font></td>
+			</tr>
+			<tr class="fontNormal"  id="spanLeft04">
+				<td valign="top" style="border: 1px solid #008000" >
+			<table border="0" width="100%" id="table18" style="border-collapse: collapse" class="fontNormal" cellpadding="2">
+				<tr bgcolor="">
+					<td valign="middle" align="right" height="20px" ><img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+					<td width="169" valign="middle" align="left" id="ODALeftPanel" height="20px">
+					<a href="http://cdc.khmer.biz/OwnReport/make_own_report.asp">
+					Design Your Own Report</a></td>
+				</tr>
+				<tr>
+      <td class="fontNormal"  align="right" height="20px">
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="169" height="20px">
+      <a href="#None" onClick="popup('http://cdc.khmer.biz/reports/select_sector_for_oda_profile.asp','380','380')">
+      ODA Profile</a></td>
+    			</tr>
+
+	<tr class="hidden">
+      <td class="fontNormal"  align="right" height="20px">
+	      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9">
+      </td>        
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="169" height="20px">
+	      <a href="http://cdc.khmer.biz/Reports/busan/busan_main.asp">Busan Monitoring Indicators</a>      </td>
+	</tr>
+    			
+
+	<tr class="hidden">
+      <td class="fontNormal"  align="right" height="20px">
+	      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9">
+      </td>        
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="169" height="20px">
+	      <a href="#None" onClick="popup('http://cdc.khmer.biz/reports/paris_indicator_board.asp','350','150')" title="This report is not last update with new PDI">      <font color="#FF3399">Paris Declaration Indicators</font></a>      </td>
+	</tr>
+
+
+				<tr>
+      <td class="fontNormal" align="right" height="20px">&nbsp;
+      </td>
+      <td class="fontNormal"  align="center" id="ODALeftPanel" width="169" height="20px">&nbsp;
+      </td>
+    			</tr>
+				</table>
+				</td>
+		  </tr>
+		</table>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="199" style="border-collapse: collapse" cellpadding="0" id="table17">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" height="25" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left">
+				<font color="#FFFFFF">
+				<b>Additionional Information</b></font></td>
+			</tr>
+			<tr class="fontNormal"  id="spanLeft04">
+				<td valign="top" style="border: 1px solid #008000" >
+			<table border="0" width="100%" id="table18" style="border-collapse: collapse" class="fontNormal" cellpadding="2">
+				<tr bgcolor="">
+					<td valign="middle" align="right" height="20px" bgcolor="#D9FFF2" ><img border="0" src="http://cdc.khmer.biz/images/arrow_red
+.gif" width="8" height="9"></td>
+					<td valign="middle" align="left" height="20px" width="168" colspan="2" bgcolor="#D9FFF2" >
+					<b>NFP</b></td>
+				</tr>
+				<tr bgcolor="">
+					<td valign="middle" align="right" height="20px" bgcolor="#FFFFFF" >&nbsp;</td>
+					<td valign="middle" align="right" height="20px" width="12" bgcolor="#FFFFFF" ><img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+					<td width="156" valign="middle" align="left" id="ODALeftPanel" height="20px" bgcolor="#FFFFFF">
+					<a target="_blank" href="../nfp/nfp_report/annex%20i%20-%20multi%20year%20work%20plan.asp">Annex 
+					I - Multi Year Work Plan I</a></td>
+				</tr>
+				<tr>
+      <td class="fontNormal"  align="right" height="20px">
+      &nbsp;</td>
+      <td class="fontNormal"  align="right" height="20px" width="12">
+      &nbsp;</td>
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="156" height="20px">
+      &nbsp;</td>
+    			</tr>
+
+	<tr class="hidden">
+      <td class="fontNormal"  align="right" height="20px">
+	      &nbsp;</td>        
+      <td class="fontNormal"  align="right" height="20px" width="12">
+	      &nbsp;</td>        
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="156" height="20px">
+	      &nbsp;</td>
+	</tr>
+    			
+
+	<tr class="hidden">
+      <td class="fontNormal"  align="right" height="20px">
+	      &nbsp;</td>        
+      <td class="fontNormal"  align="right" height="20px" width="12">
+	      &nbsp;</td>        
+      <td class="fontNormal"  align="left" id="ODALeftPanel" width="156" height="20px">
+	      &nbsp;</td>
+	</tr>
+
+
+				<tr>
+      <td class="fontNormal" align="right" height="20px">&nbsp;</td>
+      <td class="fontNormal" align="right" height="20px" width="12">&nbsp;
+      </td>
+      <td class="fontNormal"  align="center" id="ODALeftPanel" width="156" height="20px">&nbsp;
+      </td>
+    			</tr>
+				</table>
+				</td>
+		  </tr>
+		</table>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table border="0" width="199" style="border-collapse: collapse" cellpadding="0" id="table13">
+		<tr class="fontNormal">
+				<td align="center" class="fontBig" height="25" style="padding: 0; background-image: url('http://cdc.khmer.biz/images/td_green.gif'); background-repeat: no-repeat; background-position-x:left">
+				<font color="#FFFFFF">
+				<b>ODA AND 
+				NGO REPORTS</b></font></td>
+			</tr>
+			<tr class="fontNormal"  id="spanLeft03">
+				<td width="93%" align="left" style="border: 1px solid #008000" >
+			<table border="0" width="100%" id="table14" style="border-collapse: collapse" class="fontNormal" cellpadding="2">
+			
+			
+				<tr bgcolor="" style="display:none">
+						      <td class="fontNormal"  align="right">
+						<!--      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+						.gif" width="8" height="9"></td>
+						      <td class="fontNormal"  align="left" width="159" id="ODALeftPanel">
+						      <a href="http://cdc.khmer.biz/Reports/report_ngo_disbursement_by_sector2006-2007.asp">
+								NGO Disbursement by Sector 2006-2007</a>      
+								<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+						-->        
+							 <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9"></td>
+						      <td class="fontNormal"  align="left" width="167" id="ODALeftPanel">
+						      	<a href="javascript:alert('Under Construction')">NGO Disbursement by Sector 2006-2007</a><img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom">
+								
+								</td>
+  			   </tr> 
+    			
+    			
+    		<tr bgcolor="" style="display:none">
+					      <td class="fontNormal"  align="right">
+				      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9"></td>
+				      <td class="fontNormal"  align="left" width="167" id="ODALeftPanel">
+				      <a target="_blank" href="http://cdc.khmer.biz/Reports/report_multi-year-indicative-financing-framework.asp">
+						Multi-Year Indicative Financing Framework</a>      
+						<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+    			</tr>
+    			
+			<tr bgcolor="" >
+					      <td class="fontNormal"  align="right">
+					      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9"></td>
+					      <td class="fontNormal"  align="left" width="167" id="ODALeftPanel">
+					      <a title="ODA and NGO's Listing of Project(s) by Sector" href="http://cdc.khmer.biz/Reports/report_oda_and_ngo_listing_of_project_by_sector.asp">
+							Listing of Project(s) by Sector</a>      
+							<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+    			</tr>
+    			
+				<tr bgcolor="" style="display:none">
+						<!--      <td class="fontNormal"  align="right">
+						      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+						.gif" width="8" height="9"></td>
+						      <td class="fontNormal"  align="left" width="159" id="ODALeftPanel">
+						      <a title="ODA and NGO's Summary Disbursement by Type and Term Of Assistance" href="http://cdc.khmer.biz/Reports/oda_ngo_summary_disbursement_by_type_termoa.asp">
+								Summary Disbursement by Type and Term Of Assistance</a>      
+								<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+						    -->
+						       <td class="fontNormal"  align="right" >
+				      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue.gif" width="8" height="9"></td>
+				      <td class="fontNormal"  align="left" width="167" id="ODALeftPanel">
+				      <a title="ODA and NGO's Summary Disbursement by Type and Term Of Assistance" href="javascript:alert('Under Construction')">
+						Summary Disbursement by Type and Term Of Assistance</a>      
+						<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>			
+				</tr>
+    			
+				<tr bgcolor="" style="display:none">
+      <td class="fontNormal"  align="right" >
+      <img border="0" src="http://cdc.khmer.biz/images/arrow_blue
+.gif" width="8" height="9"></td>
+
+<!--      <td class="fontNormal"  align="left" width="159" id="ODALeftPanel">
+      <a title="ODA and NGO's Summary Disbursement by Province" href="http://cdc.khmer.biz/Reports/oda_ngo_summary_disbursement_by_province.asp">
+		Summary Disbursement by Province</a>   
+		<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+-->
+      <td class="fontNormal"  align="left" width="167" id="ODALeftPanel">
+      <a title="ODA and NGO's Summary Disbursement by Province" href="javascript:alert('Under Construction')">
+		Summary Disbursement by Province</a>   
+		<img border="0" src="http://cdc.khmer.biz/images/NEW.gif" width="30" height="15" align="absbottom"></td>
+    			</tr>
+    
+			<tr>
+      <td class="fontNormal"  align="right">&nbsp;
+      </td>
+      <td class="fontNormal"  align="center" width="167" id="ODALeftPanel">&nbsp;
+      </td>
+    			</tr>
+				</table>	
+				</td>
+		  </tr>
+			</table>
+		
+		</td>
+	</tr>
+	<tr>
+	
+		<td class="fontNormal">	
+			</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	</table></td>
+		<td height="20" width="86%" valign="top">
+		<table border="0" width="100%" id="table2" cellspacing="1" style="border-collapse: collapse" class="fontNormal">
+			<tr>
+				<td align="right">
+																<a href="#none" onclick="
+																	var submitValue = '?printRegion=printRegion'
+																	var w = window.open('print_region.asp'+ submitValue,'','status=no,menubar=yes,scrollbars=yes,resizable=yes')				
+																	w.focus()						
+	 															">
+																<img border="0" src="../images/print.gif" width="18" height="18" align="absbottom"> 
+																Print
+																</a>
+																</td>
+			</tr>
+			<tr>
+				<td height="24" id="printRegion">
+				<table border="0" width="100%" id="table3" class="fontNormal" cellspacing="1" style="border-collapse: collapse">
+					<tr>
+						<td width="99%" nowrap align="left" colspan="2" class="fontLarge">
+        
+        <b>
+		<img border="0" src="../images/120px-Crystal_Clear_app_kchart_small.jpg" width="60" height="60" align="absmiddle">
+		<font color="#FE6238">
+		<u>Project Listing by Sector and Status</u></font></b></td>
+					</tr>
+					<tr>
+						<td width="9%" nowrap align="right">
+        
+        &nbsp;</td>
+						<td align="left" width="90%">
+        
+            &nbsp;</td>
+					</tr>
+					<tr>
+						<td width="9%" nowrap align="right">
+        
+        <b><font color="#0066CC">Sector/Sub-Sector:</font></b><font color="#0066CC">
+		</font>
+        				</td>
+						<td align="left" width="90%">
+        
+            <select Id="OtherSubSector" name="OtherSubSector" 
+
+            size="1" class="fontNormal">
+              <option value="-1">ALL Sub-Sectors</option>
+              <Option value='101' Selected >Health</option>
+<Option value='10101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hospitals</option>
+<Option value='10102'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immunisation & Disease Control</option>
+<Option value='10103'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Education</option>
+<Option value='10104'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primary Health</option>
+<Option value='10105'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reproductive Health</option>
+<Option value='10106'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sector Policy</option>
+<Option value='10107'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWiM</option>
+<Option value='10108'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medicines & Equipment</option>
+<Option value='10199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='102'>Education</option>
+<Option value='10201'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primary/Basic</option>
+<Option value='10202'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;School and Facilities</option>
+<Option value='10203'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secondary Education</option>
+<Option value='10204'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sector Policy</option>
+<Option value='10205'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teacher Training</option>
+<Option value='10206'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tertiary, Vocational and Higher</option>
+<Option value='10207'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWAp / sector budget support</option>
+<Option value='10299'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='201'>Agriculture</option>
+<Option value='20101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agriculture financial services</option>
+<Option value='20102'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agriculture inputs</option>
+<Option value='20103'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agriculture Sector policy and management</option>
+<Option value='20104'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agriculture water & Irrigation</option>
+<Option value='20105'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cash and Export Crops</option>
+<Option value='20106'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education, Training</option>
+<Option value='20107'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extension Services</option>
+<Option value='20108'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fisheries</option>
+<Option value='20109'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Crops</option>
+<Option value='20110'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Livestock & Veterinary</option>
+<Option value='20111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post-harvest</option>
+<Option value='20112'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forestry</option>
+<Option value='20113'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Food Security, Nutrition</option>
+<Option value='20114'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meteorology</option>
+<Option value='20199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='203'>Rural Development</option>
+<Option value='20302'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Land Management and Planning</option>
+<Option value='20303'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Land Mine Clearance</option>
+<Option value='20304'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rural Sector Policy and Administration</option>
+<Option value='20305'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rural Water & Sanitation</option>
+<Option value='20306'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rural Roads</option>
+<Option value='20399'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='202'>Manufacturing, Mining Trade</option>
+<Option value='20201'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Industrial Development</option>
+<Option value='20202'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mining, Fossil Fuel</option>
+<Option value='20203'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Policy and Administration</option>
+<Option value='20204'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SME Policy and Development</option>
+<Option value='20205'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technological Research</option>
+<Option value='20206'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trade Policy, Negotiation</option>
+<Option value='20299'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='204'>Banking and Business Services</option>
+<Option value='20401'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Business Support Services</option>
+<Option value='20402'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Financial Sector Policy, Planning and Regulation</option>
+<Option value='20403'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formal Sector Financial Institutions</option>
+<Option value='20404'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Informal and Semi-Formal Institutions</option>
+<Option value='20499'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='205'>Urban Planning & Management</option>
+<Option value='20501'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Land Management and Spatial Planning</option>
+<Option value='20502'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Urban Sector Policy and Administration</option>
+<Option value='20599'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='303'>Transportation</option>
+<Option value='30301'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Air Infrastructure & Transport</option>
+<Option value='30302'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rail Infrastructure & Transport</option>
+<Option value='30303'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Road Infrastructure & Transport</option>
+<Option value='30304'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transport Policy and Management</option>
+<Option value='30305'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Water Infrastructure (port)</option>
+<Option value='30399'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='304'>Water and Sanitation</option>
+<Option value='30401'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education and Training</option>
+<Option value='30402'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;River Development</option>
+<Option value='30403'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sector Policy and Planning</option>
+<Option value='30404'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waste Management</option>
+<Option value='30405'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Urban Water Supply and Sanitation</option>
+<Option value='30499'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='302'>Energy, Power & Electricity</option>
+<Option value='30201'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Energy Research</option>
+<Option value='30202'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Energy Policy and Management</option>
+<Option value='30203'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Power Generation</option>
+<Option value='30204'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Power Transmission</option>
+<Option value='30299'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='301'>Information and Communications</option>
+<Option value='30101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICT</option>
+<Option value='30102'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Post & Telecommunications</option>
+<Option value='30103'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radio / Television / Print Media</option>
+<Option value='30199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='404'>Gender</option>
+<Option value='40401'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender</option>
+<Option value='40499'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='407'>Tourism</option>
+<Option value='40701'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tourism</option>
+<Option value='40799'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='403'>Environment and Conservation</option>
+<Option value='40301'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment and Conservation</option>
+<Option value='40399'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='701'>Climate Change (adaptation & mitigation)</option>
+<Option value='70101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Climate Change (adaptation & mitigation)</option>
+<Option value='70199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='401'>Community and Social Welfare</option>
+<Option value='40101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Community and Social Welfare Services</option>
+<Option value='40199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='402'>Culture & Arts</option>
+<Option value='40201'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Culture & Arts</option>
+<Option value='40299'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='405'>HIV/AIDS</option>
+<Option value='40501'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HIV/AIDS</option>
+<Option value='40599'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='406'>Governance & Administration</option>
+<Option value='40601'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Economic and Development Policy/Planning</option>
+<Option value='40602'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elections</option>
+<Option value='40603'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human Rights</option>
+<Option value='40604'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Legal and Judicial</option>
+<Option value='40605'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local Government Reform</option>
+<Option value='40606'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public Financial Management</option>
+<Option value='40607'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public Service Reform</option>
+<Option value='40608'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Civil Society</option>
+<Option value='40699'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='501'>Budget & BoP Support</option>
+<Option value='50101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Budget & BoP Support</option>
+<Option value='50199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='601'>Emergency & Food Aid</option>
+<Option value='60101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Emergency & Food Aid</option>
+<Option value='60199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</option>
+<Option value='9901'>Other</option>
+
+            </select></td>
+					</tr>
+					<tr>
+						<td width="9%" nowrap align="right"> 
+            <font color="#0066CC"> 
+            <b>Project Status:</b> </font>
+        				</td>
+						<td align="left" width="90%">
+		
+		<select name="cmbStatus" id="cmbStatus" size="1" tabindex="1" class="fontNormal">
+  				
+  			<option value="0" Selected>All</option>
+            <option value="1" >
+			On-going</option>
+            <option value="2" >
+			Completed</option>
+            
+  				
+  			<option value="3" >Suspended</option>
+			<option value="4" >Pipeline</option>
+            
+  				
+  			</select>
+		<img border="0" src="../images/search_button.gif" width="19" height="21" align="absmiddle" onclick="search()" class="cursorHand"></td>
+					</tr>
+					<tr>
+						<td id="report_listing_by_sector" colspan="2" align="center" height="20">
+				    		
+
+<table  width="100%" border=0 cellpadding="2" cellspacing="0" bordercolor="#000000">
+      <tr align="left" >       
+
+
+        <th align="right"> <p align="left" class="fontNormal">&nbsp;<div align="right" class="fontNormal"> 
+            <font color=Blue> <font color=#FF0000 size=+1>1</font> - <a href='#none' onClick='Page(2,101,0)'>2</a></font> - <a href='#none' onClick='Page(3,101,0)'>3</a></font> - <a href='#none' onClick='Page(4,101,0)'>4</a></font> - <a href='#none' onClick='Page(5,101,0)'>5</a></font> - <a href='#none' onClick='Page(6,101,0)'>6</a></font> </font>
+          </div> </th>
+      </tr>
+    </table>
+		
+    <table  width="100%" border=1 bordercolor="#CCCCCC" style="border-collapse: collapse" cellpadding="2" class="fontNormal" cellspacing="1">
+      <tr bgcolor="#006699" class="fontNormalBlue" > 
+        <th height="20" bgcolor="#ECE9D8" width="30" >
+		No 
+        <th height="20" bgcolor="#ECE9D8" >
+		Donor<th height="20" bgcolor="#ECE9D8" >
+		Official Title 
+        <th height="20" bgcolor="#ECE9D8" >
+		Program Number<th height="20" bgcolor="#ECE9D8" >
+		Start Date 
+        <th height="20" bgcolor="#ECE9D8" >
+		Completion Date 
+        <th height="20" bgcolor="#ECE9D8" >
+		Budget<th height="20" bgcolor="#ECE9D8" > 
+        Project Status</th>
+      
+			
+			<tr bgcolor=#FFFFF0 valign=center class=fontNormal height=25>
+				<td colspan=8 bgcolor="#E8FFE8"><b><font color=#008000>
+				<img border="0" src="../images/arrow_green.gif" width="8" height="9">Health(
+				298 Projects)
+				</font></b></td>
+			</tr>		
+	
+			<tr valign=center class=fontNormal height=25>
+				<th colspan=8 align="left" bgcolor="#EFEFEF">&nbsp;&nbsp;&nbsp;<img src="../images/arrow_gray.gif"> <font color=black>Hospitals(
+		
+		55 Projects
+			)</font></b></th></tr>
+	
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			1
+			</td>
+			<td>Belgium</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Belgium%2D2006%2DSVIM1722&DonorName=Belgium">Provision of Basic Health Services in the Province of Kampong Cham</a></td>
+			<td align=center>N/A</td>
+			<td align=center nowrap>1-Nov-2004</td>
+			<td align=center nowrap>31-Oct-2008</td>
+			<td align=right nowrap>
+			7,130,000 EUR
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			2
+			</td>
+			<td>Belgium</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Belgium%2D2006%2DSVIM1713&DonorName=Belgium">Provision of Basic Health Services in the Provinces of Siem Reap and Otdar Meanchey</a></td>
+			<td align=center>NI18955/11</td>
+			<td align=center nowrap>1-Jun-2004</td>
+			<td align=center nowrap>30-May-2008</td>
+			<td align=right nowrap>
+			13,280,000 EUR
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			3
+			</td>
+			<td>Denmark</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Denmark%2D2007%2DWE28&DonorName=Denmark">UNDP Cambodia Climate Change Alliance Trust Fund</a></td>
+			<td align=center>104.Cambodia.16</td>
+			<td align=center nowrap>9-Dec-2009</td>
+			<td align=center nowrap>9-Feb-2011</td>
+			<td align=right nowrap>
+			550,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			4
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5778&DonorName=Japan">Project for Constructing Borey Chalusar Health Post in Takeo Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>3-Oct-2006</td>
+			<td align=center nowrap>2-Oct-2007</td>
+			<td align=right nowrap>
+			21,558 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			5
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5791&DonorName=Japan">Project for Constructing Health Posts in Ratanakiri Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>3-Oct-2006</td>
+			<td align=center nowrap>2-Oct-2007</td>
+			<td align=right nowrap>
+			89,975 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			6
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5799&DonorName=Japan">Project for Constructing Phsa Prum Health Center in Pailin</a></td>
+			<td align=center></td>
+			<td align=center nowrap>3-Oct-2006</td>
+			<td align=center nowrap>2-Oct-2007</td>
+			<td align=right nowrap>
+			33,647 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			7
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE390&DonorName=Japan">Project for Constructing Training Ward at Kampong Cham Provincial Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>12-Oct-2012</td>
+			<td align=center nowrap>11-Oct-2013</td>
+			<td align=right nowrap>
+			123,340 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			8
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5760&DonorName=Japan">Project for Construction of National Eye Center at Preah Ang Duong Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>30-Nov-2006</td>
+			<td align=center nowrap>29-Nov-2007</td>
+			<td align=right nowrap>
+			89,752 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			9
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2008%2DDE191&DonorName=Japan">Project for Improvement of Kampong Cham Hospital in Kampong Cham Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>22-May-2008</td>
+			<td align=center nowrap>31-Mar-2011</td>
+			<td align=right nowrap>
+			1,039,000,000 JPY
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			10
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2007%2DWE5867&DonorName=Japan">Project for Improvement of Kampong Cham Hospital in Kampong Cham province(detailed design)</a></td>
+			<td align=center></td>
+			<td align=center nowrap>3-Dec-2007</td>
+			<td align=center nowrap>31-Mar-2008</td>
+			<td align=right nowrap>
+			60,000,000 JPY
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			11
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE260&DonorName=Japan">Project for Improving Mother and Child Health in Kampong Thom Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Mar-2010</td>
+			<td align=center nowrap>24-Mar-2011</td>
+			<td align=right nowrap>
+			27,494 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			12
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE368&DonorName=Japan">Project for Installing Medical Equipment for Operating Room in Cheung Prey Referral Hospital in Kampong Cham Province.</a></td>
+			<td align=center></td>
+			<td align=center nowrap>23-Mar-2012</td>
+			<td align=center nowrap>22-Mar-2013</td>
+			<td align=right nowrap>
+			92,290 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			13
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE353&DonorName=Japan">Project for Installing Medical Waste Incinerator at Angkor Hospital for Children in Siem Reap Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>9-Dec-2011</td>
+			<td align=center nowrap>8-Dec-2012</td>
+			<td align=right nowrap>
+			55,325 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			14
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5841&DonorName=Japan">Project for Renovating the Pulmonary Ward at the Preah Bath Norodom Sihanouk Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>27-Jan-2006</td>
+			<td align=center nowrap>26-Jan-2007</td>
+			<td align=right nowrap>
+			159,163 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			15
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DSVIM5802&DonorName=Japan">Project for the Improvement of Mongkul Borey Hospital in Banteay Meanchey Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>29-Aug-2005</td>
+			<td align=center nowrap>31-Mar-2007</td>
+			<td align=right nowrap>
+			683,000,000 JPY
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			16
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE402&DonorName=Japan">The Project for Constructing a Hospital Ward and Installing Medical Equipment at Borkeo District Referral Hospital in Ratanakiri Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>20-Dec-2012</td>
+			<td align=center nowrap>19-Dec-2013</td>
+			<td align=right nowrap>
+			100,298 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			17
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE321&DonorName=Japan">The Project for Constructing Emergency Ward and Installing Medical Equipment for Emergency Ward at Ratanakiri Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>22-Mar-2011</td>
+			<td align=center nowrap>21-Mar-2012</td>
+			<td align=right nowrap>
+			84,674 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			18
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE231&DonorName=Japan">The Project for Constructing Emergency Ward and Installing Medical Equipment for Emergency Ward in Kratie Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>11-Dec-2008</td>
+			<td align=center nowrap>10-Dec-2009</td>
+			<td align=right nowrap>
+			79,851 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			19
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE445&DonorName=Japan">The Project for Constructing General Medical Care Ward in Cheung Prey Referral Hospital in Kampong Cham Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Nov-2013</td>
+			<td align=center nowrap>24-Nov-2014</td>
+			<td align=right nowrap>
+			116,950 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			20
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE446&DonorName=Japan">The Project for Constructing Khun Ream Health Center in Banteay Srey District, Siemreap Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Nov-2013</td>
+			<td align=center nowrap>24-Nov-2014</td>
+			<td align=right nowrap>
+			75,523 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			21
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE466&DonorName=Japan">The Project for Constructing Medical and Pediatrics Ward at Prey Kabas Referral Hospital in Takeo Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Mar-2014</td>
+			<td align=center nowrap>24-Mar-2015</td>
+			<td align=right nowrap>
+			116,120 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			22
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2007%2DWE5855&DonorName=Japan">The Project for Construction of Consultation Ward in Prey Kabas Referral Hospital in Takeo Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>1-Aug-2007</td>
+			<td align=center nowrap>31-Jul-2008</td>
+			<td align=right nowrap>
+			23,858 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			23
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE358&DonorName=Japan">The Project for Construction of General Medical Care Ward in Pea Raing Referral Hospital in Prey Veng Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>27-Jan-2012</td>
+			<td align=center nowrap>26-Jan-2013</td>
+			<td align=right nowrap>
+			97,100 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			24
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2007%2DWE5862&DonorName=Japan">The Project for Construction of Reay Pay and Baray Health Centers in Kampong Cham Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>14-Sep-2007</td>
+			<td align=center nowrap>13-Sep-2008</td>
+			<td align=right nowrap>
+			73,500 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			25
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE479&DonorName=Japan">The Project for Exapnsion of National Maternal and Child Health Center</a></td>
+			<td align=center></td>
+			<td align=center nowrap>26-Mar-2014</td>
+			<td align=center nowrap>28-Feb-2017</td>
+			<td align=right nowrap>
+			1,193,000,000 JPY
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			26
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE356&DonorName=Japan">The Project for Extension of Delivery Rooms at Eight Health Centers in Takeo Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>6-Feb-2012</td>
+			<td align=center nowrap>5-Feb-2013</td>
+			<td align=right nowrap>
+			74,333 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			27
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE395&DonorName=Japan">The Project for Extension of Surgical Ward in National Pediatric Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>1-Nov-2012</td>
+			<td align=center nowrap>31-Oct-2013</td>
+			<td align=right nowrap>
+			424,246 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			28
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE372&DonorName=Japan">The Project for Improvement of Medical Equipment in National, Municipal and Provincial Referral Hospitals</a></td>
+			<td align=center></td>
+			<td align=center nowrap>29-Mar-2012</td>
+			<td align=center nowrap>30-Apr-2014</td>
+			<td align=right nowrap>
+			374,000,000 JPY
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			29
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE422&DonorName=Japan">The Project for Improvement of Sihanouk Province Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>28-Mar-2013</td>
+			<td align=center nowrap>29-Feb-2016</td>
+			<td align=right nowrap>
+			1,321,000,000 JPY
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			30
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE221&DonorName=Japan">The Project for Improving Maternal and Child Health Services in Prey Veng Operational District</a></td>
+			<td align=center></td>
+			<td align=center nowrap>28-Feb-2008</td>
+			<td align=center nowrap>27-Feb-2009</td>
+			<td align=right nowrap>
+			172,413 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			31
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE468&DonorName=Japan">The Project for Improving Maternal and Child Health through Strengthening Health Care Facilities in Kampong Speu Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Mar-2014</td>
+			<td align=center nowrap>24-Mar-2015</td>
+			<td align=right nowrap>
+			95,801 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			32
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=JP%2D2006%2DWE5852&DonorName=Japan">The Project for Installing Medical Equipment for Refferal Hospitals and Constructing of Kubal Damrey Health Post in Kratie Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>26-Jun-2007</td>
+			<td align=center nowrap>25-Jun-2008</td>
+			<td align=right nowrap>
+			35,070 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			33
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE465&DonorName=Japan">The Project for Installing Ventilators in Angkor Hospital for Children in Siem Reap Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Mar-2014</td>
+			<td align=center nowrap>24-Mar-2015</td>
+			<td align=right nowrap>
+			114,314 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			34
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE490&DonorName=Japan">The Project for Rehabilitation of Infectious Disease Ward in Kampong Thom Provincial Referral Hospital</a></td>
+			<td align=center></td>
+			<td align=center nowrap>17-Nov-2014</td>
+			<td align=center nowrap>16-Nov-2015</td>
+			<td align=right nowrap>
+			82,615 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			35
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE464&DonorName=Japan">The Project for Renovating Surgical Ward in Pea Raing Referral Hospital in Prey Veng Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>25-Mar-2014</td>
+			<td align=center nowrap>24-Mar-2015</td>
+			<td align=right nowrap>
+			109,214 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			36
+			</td>
+			<td>Japan</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Japan%2D2007%2DWE458&DonorName=Japan">The Project for Strengthening Capacity for TB Diagnosis at Pea Raing Operational District in Prey Veng Province</a></td>
+			<td align=center></td>
+			<td align=center nowrap>7-Mar-2014</td>
+			<td align=center nowrap>6-Mar-2015</td>
+			<td align=right nowrap>
+			272,222 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			37
+			</td>
+			<td>New Zealand</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=New+Zealand%2D2006%2DSVIM751&DonorName=New+Zealand">Capacity Building for the Cambodian School of Prosthetics & Orthotics (CSPO)</a></td>
+			<td align=center>2709</td>
+			<td align=center nowrap>1-Jan-2005</td>
+			<td align=center nowrap>24-Dec-2007</td>
+			<td align=right nowrap>
+			416,609 NZD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			38
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1158&DonorName=Republic+of+Korea">Dispatch of Experts for 2005</a></td>
+			<td align=center>KHE-05</td>
+			<td align=center nowrap>3-Jan-2005</td>
+			<td align=center nowrap>30-Dec-2005</td>
+			<td align=right nowrap>
+			277,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			39
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1140&DonorName=Republic+of+Korea">Dispatch of Volunteers for 2004</a></td>
+			<td align=center>KHV-04</td>
+			<td align=center nowrap>1-Jan-2004</td>
+			<td align=center nowrap>31-Dec-2004</td>
+			<td align=right nowrap>
+			1,330,300 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			40
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1139&DonorName=Republic+of+Korea">Dispatch of Volunteers for 2005</a></td>
+			<td align=center>KHV-05</td>
+			<td align=center nowrap>3-Jan-2005</td>
+			<td align=center nowrap>31-Dec-2005</td>
+			<td align=right nowrap>
+			1,788,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			41
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1156&DonorName=Republic+of+Korea">Dispatch of Volunteers for 2006</a></td>
+			<td align=center>DV-06</td>
+			<td align=center nowrap>2-Jan-2006</td>
+			<td align=center nowrap>29-Dec-2006</td>
+			<td align=right nowrap>
+			2,283,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			42
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE97&DonorName=Republic+of+Korea">Establishing Rural health Center in Kong Pisey Cambodia-2011</a></td>
+			<td align=center>ERH-11</td>
+			<td align=center nowrap>1-Jan-2011</td>
+			<td align=center nowrap>31-Dec-2011</td>
+			<td align=right nowrap>
+			132,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			43
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1145&DonorName=Republic+of+Korea">Establishment of the Modern Hospital for Cambodian Children</a></td>
+			<td align=center>KHH-1</td>
+			<td align=center nowrap>3-Mar-2005</td>
+			<td align=center nowrap>30-Nov-2006</td>
+			<td align=right nowrap>
+			2,400,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			44
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE162&DonorName=Republic+of+Korea">Integrated Maternal, Newborn and Child Health Programme (2011-2016/ 9,893)</a></td>
+			<td align=center>KOFIH-1116</td>
+			<td align=center nowrap>1-Jan-2011</td>
+			<td align=center nowrap>31-Dec-2016</td>
+			<td align=right nowrap>
+			9,893,000 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			45
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE148&DonorName=Republic+of+Korea">Modernization of Child Care Medical Center at National Pediatric Hospital (2013-2014 / $ 5,000,000)</a></td>
+			<td align=center>NPH-2013</td>
+			<td align=center nowrap>1-Jan-2013</td>
+			<td align=center nowrap>31-Dec-2015</td>
+			<td align=right nowrap>
+			5,000,000 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			46
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE84&DonorName=Republic+of+Korea">Project for the Establishment of Preah Angduong Eye Hospital in Phnom Penh, Cambodia</a></td>
+			<td align=center>Eye-11-13</td>
+			<td align=center nowrap>1-Jan-2011</td>
+			<td align=center nowrap>31-Dec-2014</td>
+			<td align=right nowrap>
+			5,500,000 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			47
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE85&DonorName=Republic+of+Korea">Project for the Strengthening Capacity of Batheay Referral Hospital in Batheay District, Kampong Cham Province</a></td>
+			<td align=center>Batheay-11-04</td>
+			<td align=center nowrap>1-Jan-2011</td>
+			<td align=center nowrap>31-Dec-2014</td>
+			<td align=right nowrap>
+			3,500,000 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			48
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2007%2DWE166&DonorName=Republic+of+Korea">Strengthening medical specialty for Medical personnel of Obstetrics and Pediatrics at Hospitals in Battambang in connection with the IntegratedMaternal, Newborn and Child Health Programme in Cambodia (2013.10~2014.9 / 20)</a></td>
+			<td align=center>KOFIH-13 (ppp1)</td>
+			<td align=center nowrap>1-Jan-2013</td>
+			<td align=center nowrap>31-Dec-2013</td>
+			<td align=right nowrap>
+			20,000 USD
+			</td>
+			<td align=center>On-going</td>
+
+
+
+</tr>
+
+			<tr class= valign=top height="20">
+	
+			<td align=center>
+			49
+			</td>
+			<td>Republic of Korea</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Republic+of+Korea%2D2006%2DSVIM1146&DonorName=Republic+of+Korea">Strengthening the Refferal Hospitals in Cambodia or The Establishment of the Korea-Cambodia Friendship Hospital in Kampong Chhnang</a></td>
+			<td align=center>HKC-0709</td>
+			<td align=center nowrap>12-Feb-2007</td>
+			<td align=center nowrap>31-Dec-2009</td>
+			<td align=right nowrap>
+			1,000,000 USD
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+			<tr class=bgGray valign=top height="20">
+	
+			<td align=center>
+			50
+			</td>
+			<td>Switzerland</td>
+			<td><a target="_blank" href="../reports/additional_information/project_readonly_page01.asp?Record_Id=Switzerland%2D2006%2DSVIM415&DonorName=Switzerland">Contribution to programmes of Swiss NGOs active in Cambodia</a></td>
+			<td align=center>SDC</td>
+			<td align=center nowrap>1-Jan-1990</td>
+			<td align=center nowrap>31-Dec-2010</td>
+			<td align=right nowrap>
+			6,090,000 CHF
+			</td>
+			<td align=center>Completed</td>
+
+
+
+</tr>
+
+      </table>
+
+<table width="100%" border=0 bordercolor="#C0C0C0" style="border-collapse: collapse" id="table1" cellspacing="1">
+      <tr>
+        <td  align=left> 
+         
+
+        <input type="button" style="width:60" class="fontNormal" value="Details" name="B1" onclick="window.open('../Query/query_result_detail.asp?where=Where+%5BNew+Questionnaire%5D%2ERecord%5Fid+In%28Select+Record%5FId+From+%5BPre+Count+Record%5FId+by+Sector+and+Status+for+List%5D+Where+SectorCode%3D101+Group+by+Record%5FID%29&go=First','','menubar=yes,scrollbars=yes,resizable=yes');">
+        </td>
+        <td align=right class="fontNormal" valign=top> <font color="#0000FF"> <font color=#FF0000 size=+1>1</font> - <a href='#none' onClick='Page(2,101,0)'>2</a></font> - <a href='#none' onClick='Page(3,101,0)'>3</a></font> - <a href='#none' onClick='Page(4,101,0)'>4</a></font> - <a href='#none' onClick='Page(5,101,0)'>5</a></font> - <a href='#none' onClick='Page(6,101,0)'>6</a></font></font>
+        </td>
+      </tr>
+      </table>
+						</td>
+					</tr>
+				</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td align="center"></td>
+			</tr>
+			<tr>
+				<td align="right">
+																&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="right">
+																<a href="#none" onclick="
+																	var submitValue = '?printRegion=printRegion'
+																	var w = window.open('print_region.asp'+ submitValue,'','status=no,menubar=yes,scrollbars=yes,resizable=yes')				
+																	w.focus()						
+	 															">
+																<img border="0" src="../images/print.gif" width="18" height="18" align="absbottom"> 
+																Print
+																</a>
+																</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20" width="13%" valign="top">&nbsp;</td>
+		<td height="20" width="86%" valign="top">&nbsp;</td>
+	</tr>
+	<tr>
+		<td height="20" width="99%" colspan="2" align="center"><table border="0" width="100%" id="table1" cellpadding="0" style="border-collapse: collapse">
+				<tr>
+					<td align="center" style="border-top:1px solid #C0C0C0; border-left-width:1px; border-right-width:1px; border-bottom-width:1px" class="fontNormal">
+					<font color="#0033CC">&#169; Copyright 2007-2015 - CDC/CRDB ODA Disbursement Website </font></td>
+				</tr>
+</table>
+</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+

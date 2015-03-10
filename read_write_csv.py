@@ -77,7 +77,7 @@ def array_to_csv(csvfilename, dataset, headers=None):
 		csvout.writerow(headers)
 	#Write data to csv file
 	for entry in dataset:
-		print(entry)
+		#print(entry)
 		csvout.writerow(entry)
 	#tidy up
 	fout.close()

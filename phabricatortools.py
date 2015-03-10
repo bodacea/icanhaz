@@ -15,7 +15,7 @@ import sys
 import json
 
 
-""" Set up phabricator for use
+""" Get a task list from phabricator
 
 Example use: setup_phab('PHID-PROJ-rbdn2wck434bye3sjpxc')
 """
